@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loop vs. Recursion Visualizers</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-content-wrapper">
+      <div class="container">
+        <h1>Loop Visualizer</h1>
+        <div class="controls">
+          <label for="arraySize">Enter array size (1-10):</label>
+          <input type="number" id="arraySize" min="1" max="10" />
+          <button id="startButton" disabled>Start Animation</button>
+          <span id="validationMessage" class="validation-message hidden"
+            >Value should be between 1 and 10.</span
+          >
+        </div>
+
+        <div class="loop-status-container hidden">
+          <span class="loop-status-text">Variable</span>
+          <span id="loopVariable">0</span>
+          <span id="equalSign" class="equal-sign">=</span>
+          <span id="arrayLength">0</span>
+          <span class="loop-status-text">length</span>
+        </div>
+
+        <div id="arrayContainer" class="array-container hidden"></div>
+      </div>
+
+      <div class="container recursion-container">
+        <h1>Recursive Visualizer - Unwinding Phase</h1>
+        <div class="controls">
+          <label for="recursionUnwindingArraySize"
+            >Enter array size (1-10):</label
+          >
+          <input
+            type="number"
+            id="recursionUnwindingArraySize"
+            min="1"
+            max="10"
+          />
+          <button id="recursionUnwindingStartButton" disabled>
+            Start Animation
+          </button>
+          <span
+            id="recursionUnwindingValidationMessage"
+            class="validation-message hidden"
+            >Value should be between 1 and 10.</span
+          >
+        </div>
+
+        <div class="loop-status-container hidden">
+          <span class="loop-status-text">Stack Index</span>
+          <span id="recursionUnwindingLoopVariable">0</span>
+          <span id="recursionUnwindingEqualSign" class="equal-sign">=</span>
+          <span id="recursionUnwindingArrayLength">0</span>
+          <span class="loop-status-text">length</span>
+        </div>
+
+        <div
+          id="recursionUnwindingArrayContainer"
+          class="array-container hidden"
+        ></div>
+      </div>
+
+      <div class="container recursion-calling-container">
+        <h1>Recursive Visualizer - Calling Phase</h1>
+        <div class="controls">
+          <label for="recursionCallingArraySize"
+            >Enter array size (1-10):</label
+          >
+          <input
+            type="number"
+            id="recursionCallingArraySize"
+            min="1"
+            max="10"
+          />
+          <button id="recursionCallingStartButton" disabled>
+            Start Animation
+          </button>
+          <span
+            id="recursionCallingValidationMessage"
+            class="validation-message hidden"
+            >Value should be between 1 and 10.</span
+          >
+        </div>
+
+        <div class="loop-status-container hidden">
+          <span class="loop-status-text">Stack Index</span>
+          <span id="recursionCallingLoopVariable">0</span>
+          <span id="recursionCallingEqualSign" class="equal-sign">=</span>
+          <span id="recursionCallingArrayLength">0</span>
+          <span class="loop-status-text">length</span>
+        </div>
+
+        <div
+          id="recursionCallingArrayContainer"
+          class="array-container hidden"
+        ></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

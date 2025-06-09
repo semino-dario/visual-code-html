@@ -1,0 +1,218 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 2500px; /* Increased max-width to accommodate three containers */
+  width: 100%;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 300px; /* Allows containers to grow/shrink, with a minimum width of 300px */
+  max-width: 450px; /* Max width for each container */
+  box-sizing: border-box;
+}
+
+/* Specific background for Unwinding Phase */
+.recursion-container {
+  background-color: #e6f7ff;
+  border: 1px solid #cceeff;
+}
+
+/* NEW: Specific background for Calling Phase */
+.recursion-calling-container {
+  background-color: #ffe6e6; /* A lighter red background */
+  border: 1px solid #ffcccc; /* A light red border */
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+label {
+  margin-right: 5px;
+  font-size: 1.1em;
+}
+
+input[type="number"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60px;
+  text-align: center;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.validation-message {
+  color: #dc3545;
+  font-size: 0.9em;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.loop-status-container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Loop variable default color */
+#loopVariable,
+#recursionUnwindingLoopVariable,
+#recursionCallingLoopVariable {
+  color: #e44d26;
+}
+
+/* Loop variable default color */
+#arrayLength,
+#recursionUnwindingArrayLength,
+#recursionCallingArrayLength {
+  color: #007bff;
+}
+
+.equal-sign {
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.equal-sign.animate-end {
+  color: #28a745;
+  font-size: 2.2em;
+  animation: bounceScale 0.5s ease-in-out forwards;
+}
+
+@keyframes bounceScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.loop-status-text {
+  font-size: 0.8em;
+  color: #666;
+  margin-left: 5px;
+}
+
+.array-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  min-height: 80px;
+  max-width: 800px; /* Still allows wider display if a single container fills it */
+}
+
+.array-element {
+  width: 70px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #555;
+  transition: background-color 0.5s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.array-element-content {
+  font-size: 1.8em;
+  line-height: 1;
+}
+
+.array-index {
+  font-size: 0.7em;
+  color: #888;
+  margin-top: 5px;
+}
+
+.array-element.highlight {
+  background-color: #ffda6a; /* Loop highlight */
+  transform: scale(1.1);
+}
+
+.recursion-element-calling {
+  background-color: #b3d9ff; /* Blue for Unwinding phase calling */
+  border: 2px solid #007bff;
+}
+
+/* NEW: Specific highlight for Calling phase calling */
+.recursion-calling-element-active {
+  background-color: #ffb3b3; /* Lighter red for Calling phase active */
+  border: 2px solid #ff0000;
+}
+
+.array-element.face {
+  background-color: #a8e6cf;
+  color: #333;
+}
